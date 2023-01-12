@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+
+
+
+    
+
+
+
+<ul>
+    <% for (let i = 0; i < notes.length; i++) { %>
+        <li>
+            <h2><%= notes[i].title %></h2>
+            <p><%= notes[i].contents %></p>
+            <form action="/deleteNote" method="post">
+                <input type="hidden" name="id" value="<%= notes[i].id %>">
+                <button type="submit">Delete Note</button>
+            </form>
+        </li>
+        <%} %>
+</ul>
+
+
+
+</body>
+</html>
